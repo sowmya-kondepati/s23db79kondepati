@@ -8,13 +8,13 @@ var icecream_controller = require('../controllers/icecream');
 router.get('/', api_controller.api);
 /// icecream ROUTES ///
 // POST request for creating a icecream.
-router.post('/icecreams', icecream_controller.icecream_create_post);
+router.post('/icecream', icecream_controller.icecream_create_post);
 // DELETE request to delete icecream.
-router.delete('/icecreams/:id', icecream_controller.icecream_delete);
+router.delete('/icecream/:id', icecream_controller.icecream_delete);
 // PUT request to update icecream.
-router.put('/icecreams/:id', icecream_controller.icecream_update_put);
+router.put('/icecream/:id', icecream_controller.icecream_update_put);
 // GET request for one icecream.
-router.get('/icecreams/:id', icecream_controller.icecream_detail);
+router.get('/icecream/:id', icecream_controller.icecream_detail);
 // GET request for list of all icecream items.
-router.get('/icecreams', icecream_controller.icecream_list);
+router.get('/icecream', icecream_controller.icecream_list);
 module.exports = router;
