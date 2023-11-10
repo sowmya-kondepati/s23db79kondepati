@@ -51,7 +51,7 @@ console.log("First object saved")}
 ).catch(err=>{
 console.error(err)
 });
-}
+
 let instance2 = new
 icecream({icecream_flavours:"Vanilla", icecream_price:60,
 icecream_quantity:100});
@@ -69,7 +69,7 @@ console.log("Third object saved")}
 ).catch(err=>{
 console.error(err)
 });
-
+}
 let reseed = true;
 if (reseed) {recreateDB();}
 
