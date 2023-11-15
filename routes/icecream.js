@@ -2,14 +2,12 @@ var express = require('express');
 const icecream_controller = require('../controllers/icecream');
 var router = express.Router();
 
-/* GET costumes */
+/* GET icecreams */
 router.get('/', icecream_controller.icecream_view_all_Page );
-module.exports = router;
+/* GET detail icecream page */
+router.get('/detail', icecream_controller.icecream_view_one_Page );
+/* GET create costume page */
+router.get('/create', icecream_controller.icecream_create_Page);
 
-
-// /* GET home page. */
-// router.get('/', function(req, res, next) {
-//   res.render('icecream', { title: 'Search Results for icecream' });
-// });
 
 module.exports = router;
