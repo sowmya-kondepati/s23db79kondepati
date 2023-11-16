@@ -7,6 +7,15 @@ a {
   color: #00B7FF;
 }
 .icecreamAttr {
-  background-color: aquamarine;
+  background-color: skyblue;
   width: 120px;
+  color:blue;
+}
+#icecreamForm{
+  
+  font-family: 'Courier New', Courier, monospace;
+}
+h1{
+  font-style: italic;
+  color:purple;
 }

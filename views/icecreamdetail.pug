@@ -1,20 +1,23 @@
 extends layout
 block content
-    h1= title
+  h1= title
+  if (toShow == null)
+    h2 No instance to detail
+  else 
     - let icecreamid = toShow._id
     - let icecream_type = toShow.icecream_flavours
     - let icecreamprice = toShow.icecream_price
     - let icecreamquantity = toShow.icecream_quantity
     div
-        div.row
-            div(class='icecreamAttr mr-3') icecream ID is: 
-            div #{icecreamid}
-        div.row
-            div(class='icecreamAttr mr-3') icecream Flavours is:
-            div #{icecream_type}
-        div.row
-            div(class='icecreamAttr mr-3') icecream Price is:
-            div #{icecreamprice}
-        div.row
-            div(class='icecreamAttr mr-3') icecream Quanity is:
-            div #{icecreamquantity}
+      div.row
+        div(class='icecreamAttr mr-3') icecream ID is:
+        div #{icecreamid}
+      div.row
+        div(class='icecreamAttr mr-3') icecream Flavours is:
+        div #{icecream_type}
+      div.row
+        div(class='icecreamAttr mr-3') icecream Price is:
+        div #{icecreamprice}
+      div.row
+        div(class='icecreamAttr mr-3') icecream Quantity is:
+        div #{icecreamquantity}
