@@ -2,13 +2,19 @@ extends layout
 
 block content
   h1= title
-  - let icecream=[{icecream_flavours:"Strawberry",icecream_price:50,icecream_quantity :100},{icecream_flavours:"Vanilla",icecream_price:60,icecream_quantity :200},{icecream_flavours :"Cherry", icecream_price :70, icecream_quantity :300}]
+  - let icecream = results;
+    button.btn( class="btn-primary ml-1", onclick= `dispatch(\"/icecream/create")`) Create
+
   div(class="container-fluid")
     div(class="row m-1")
       each value in results
         - let destination = `dispatch(\"/icecream/update?id=${value._id}\")`
         div(class="row-sm-2",class="m-1") #{value.icecream_flavours} icecream, price #{value.icecream_price}, with quantity #{value.icecream_quantity}
-          button.btn( class="btn-primary ml-1", onclick= destination) Update
+          
+          
+          button.btn( class="btn-primary ml-1", onclick= `dispatch(\"/icecream/update?id=${value._id}\")`) Update
+          button.btn( class="btn-primary ml-1", onclick= `dispatch(\"/icecream/delete?id=${value._id}\")`) Delete
+          button.btn( class="btn-primary ml-1", onclick= `dispatch(\"/icecream/detail?id=${value._id}\")`) Detail
     script.
       function dispatch(path){
         window.location.href=path

@@ -93,7 +93,7 @@ async function recreateDB(){
 // Delete everything
 await icecream.deleteMany();
 let instance1 = new
-icecream({icecream_flavours:"Strawberry", icecream_price:'50',
+icecream({icecream_flavours:"Strawberry", icecream_price:50,
 icecream_quantity:100});
 instance1.save().then(doc=>{
 console.log("First object saved")}
