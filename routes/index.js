@@ -1,12 +1,22 @@
+// var express = require('express');
+// var router = express.Router();
+
+// /* GET home page. */
+// router.get('/', function(req, res, next) {
+//   res.render('index', { title: 'Express' });
+// });
+
+// module.exports = router;
+
 var express = require('express');
 var passport = require('passport');
 var router = express.Router();
 var Account = require('../models/account');
 router.get('/', function (req, res) {
-res.render('index', { title: 'Ice Cream App', user : req.user });
+res.render('index', { title: 'Icecream', user : req.user });
 });
 router.get('/register', function(req, res) {
-res.render('register', { title: 'Ice Cream App Registration'});
+res.render('register', { title: 'Icecream Registration'});
 });
 router.post('/register', function(req, res) {
 Account.findOne({ username : req.body.username })
@@ -37,7 +47,7 @@ message: 'Registration error', account : req.body.username })
 })
 });
 router.get('/login', function(req, res) {
-res.render('login', { title: 'Ice Cream App Login', user : req.user });
+res.render('login', { title: 'Icecream App Login', user : req.user });
 });
 router.post('/login', passport.authenticate('local'), function(req, res) {
 res.redirect('/');
@@ -52,3 +62,4 @@ router.get('/ping', function(req, res){
 res.status(200).send("pong!");
 });
 module.exports = router;
+  
